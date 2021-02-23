@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'pets/styles/styles.css' %}" rel="stylesheet"  />
+    <title>{{ petname }}</title>
+  </head>
+
+  <body>
+    <div>
+    {% if petname == "cat" %}
+        <h1>{{ petname }}</h1>
+        <img src="{% static '/pets/images/cat.jpg' %}" alt="cat" />
+    {% elif petname == "dog" %}
+        <h1>{{ petname }}</h1>
+        <img src="{% static '/pets/images/dog.jpg' %}" alt="dog" />
+    {% elif petname == "hamster" %}
+        <h1>{{ petname }}</h1>
+        <img src="{% static '/pets/images/hamster.jpg' %}" alt="hamster" />
+    {% elif petname == "rabbit" %}
+        <h1>{{ petname }}</h1>
+        <img src="{% static '/pets/images/rabbit.jpg' %}" alt="rabbit" />
+    {% else %}
+        <h1>Sorry!!! No picture is available for {{ petname }}</h1>
+    {% endif %}
+    </div>
+  </body>
+</html>
