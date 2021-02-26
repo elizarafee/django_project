@@ -1,0 +1,11 @@
+{% extends "lists/layout.html" %}
+
+{% block body %}
+<h2>List Items:</h2>
+    <ol>
+    {% for item in items %}
+        <li> {{item}} </li>
+    {% endfor %}
+    </ol>
+    <a href="{% url 'additem' %}">Add a new task</a>
+{% endblock %}

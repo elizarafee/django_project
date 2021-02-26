@@ -1,0 +1,10 @@
+{% extends 'lists/layout.html' %}
+
+{% block body %}
+    <h1>Add new Item</h1>
+    <form>
+        <input type="text" name="Item"/>
+        <input type="submit" name="Add"/>
+    </form>
+    <a href="{% url 'list' %}">Added items</a>
+{% endblock %}
