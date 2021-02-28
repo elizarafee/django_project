@@ -1,9 +1,10 @@
 {% extends 'lists/layout.html' %}
 
 {% block body %}
-    <h1>Add new Item</h1>
-    <form>
-        <input type="text" name="Item"/>
+    <h2>Add new Item</h2>
+    <form action="{% url 'lists:additem' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
         <input type="submit" name="Add"/>
     </form>
     <a href="{% url 'lists:list' %}">Added items</a>

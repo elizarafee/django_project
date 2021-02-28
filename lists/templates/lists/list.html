@@ -3,9 +3,14 @@
 {% block body %}
 <h2>List Items:</h2>
     <ol>
+    <!-- {% if items|length == 10 %}
+        <h3>No items!</h3>
+    {% endif %} -->
     {% for item in items %}
         <li> {{item}} </li>
+    {% empty %}
+        <p>No Task is added!</p>
     {% endfor %}
     </ol>
-    <a href="{% url 'lists:additem' %}">Add a new task</a>
+    <a href="{% url 'lists:additem' %}">Add a new item</a>
 {% endblock %}
